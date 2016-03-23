@@ -25,12 +25,13 @@ is the average of the layers for all the patches
 
 ### Dependencies
 In order to get the code working a few dependencies are needed:
--OpenCV
-This is the main dependency for all descriptors. Our code works with version 2.4.11 or superior. For installation instructions,
-please refer to the official documentation for OpenCV in [Linux]{http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html}, [Windows]{http://docs.opencv.org/2.4/doc/tutorials/introduction/windows_install/windows_install.html}.
-Or [Install just python bindigs]{http://docs.opencv.org/3.1.0/d5/de5/tutorial_py_setup_in_windows.html#gsc.tab=0} if you like.
 
--Caffe
+- OpenCV
+This is the main dependency for all descriptors. Our code works with version 2.4.11 or superior. For installation instructions,
+please refer to the official documentation for OpenCV in [Linux](http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html), [Windows](http://docs.opencv.org/2.4/doc/tutorials/introduction/windows_install/windows_install.html).
+Or [Install just python bindigs](http://docs.opencv.org/3.1.0/d5/de5/tutorial_py_setup_in_windows.html#gsc.tab=0 ) if you like.
+
+- Caffe
 This is only needed for the neural networks used to extract DeCAF7, so, if you will not use it, there is no need to install Caffe.
 Otherwise, you can found installation instructions [here]{http://caffe.berkeleyvision.org/installation.html}
 
