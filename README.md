@@ -33,7 +33,7 @@ Or [Install just python bindigs](http://docs.opencv.org/3.1.0/d5/de5/tutorial_py
 
 - Caffe
 This is only needed for the neural networks used to extract DeCAF7, so, if you will not use it, there is no need to install Caffe.
-Otherwise, you can found installation instructions [here]{http://caffe.berkeleyvision.org/installation.html}
+Otherwise, you can found installation instructions [here](http://caffe.berkeleyvision.org/installation.html)
 
 And that's it, once you've installed OpenCV and Caffe, all algorithms should run in your preferred language
 
