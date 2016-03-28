@@ -22,9 +22,6 @@ class OrientedGradientsComputer(DescriptorComputer):
 		orientations = np.zeros_like(dx)
 		magnitudes = np.zeros_like(dx)
 		cv2.cartToPolar(dx,dy, magnitudes,orientations)
-		cv2.imwrite("dx.jpg", dx)
-		cv2.imwrite("dy.jpg", dy)
-		cv2.imwrite("magnitudes.jpg", magnitudes)
 		descriptor = []
 		frameH, frameW = frame.shape
 		mask_threshold = magnitudes <= self.threshold
