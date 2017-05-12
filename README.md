@@ -7,7 +7,7 @@ For exploring the data, you can follow these links:
 
   - [SPARQL Endpoint](http://imgpedia.dcc.uchile.cl/sparql)
   - [IMGpedia RDF Dumps](http://imgpedia.dcc.uchile.cl/dumps)
-  - [VoID statistics](http://imgpedia.dcc.uchile.cl/dumps/void.nt)
+  - [VoID statistics](http://imgpedia.dcc.uchile.cl/dumps/20170506/void.nt)
   - [Figshare](https://doi.org/10.6084/m9.figshare.4991099.v2)
   - [GitHub Issue Tracker](https://github.com/scferrada/imgpedia/issues)
 
