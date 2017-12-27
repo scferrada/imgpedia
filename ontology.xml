@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <owl:Ontology rdf:about="http://imgpedia.dcc.uchile.cl">
+    <rdfs:label xml:lang="en">The IMGpedia Ontology</rdfs:label>
+    <rdfs:label xml:lang="es">La Ontologia de IMGpedia</rdfs:label>
+  </owl:Ontology>
+
+  <owl:Class rdf:about="http://imgpedia.dcc.uchile.cl/ontology#Image">
+    <rdfs:label xml:lang="en">Image</rdfs:label>
+    <rdfs:label xml:lang="es">Imagen</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/StillImage"/>
+    <rdfs:subClassOf rdf:resource="http://schema.org/ImageObject"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://imgpedia.dcc.uchile.cl/ontology#Descriptor">
+    <rdfs:label xml:lang="en">Descriptor</rdfs:label>
+    <rdfs:label xml:lang="es">Descriptor</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://imgpedia.dcc.uchile.cl/ontology#CLD">
+    <rdfs:subClassOf rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Descriptor"/>
+    <rdfs:label xml:lang="en">Color Layout Descriptor</rdfs:label>
+    <rdfs:label xml:lang="es">Descriptor de la Distribucion del Color</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://imgpedia.dcc.uchile.cl/ontology#GHD">
+    <rdfs:subClassOf rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Descriptor"/>
+    <rdfs:label xml:lang="en">Gray Histogram Descriptor</rdfs:label>
+    <rdfs:label xml:lang="es">Histograma de Grises</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://imgpedia.dcc.uchile.cl/ontology#HOG">
+    <rdfs:subClassOf rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Descriptor"/>
+    <rdfs:label xml:lang="en">Histogram of Oriented Gradient</rdfs:label>
+    <rdfs:label xml:lang="es">Histograma de Orientacion del Gradiente</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://imgpedia.dcc.uchile.cl/ontology#ImageRelation">
+    <rdfs:label xml:lang="en">Image Relation</rdfs:label>
+    <rdfs:label xml:lang="es">Relacion entre Imagenes</rdfs:label>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#similar">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Image"/>
+    <rdfs:range rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Image"/>
+    <rdfs:label xml:lang="en">A similar image</rdfs:label>
+    <rdfs:label xml:lang="es">Una imagen similar</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://dbpedia.org/ontology/similar"/>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#height">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Image"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en">Image height in pixels</rdfs:label>
+    <rdfs:label xml:lang="es">Altura de la imagen en unidades de pixel</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://schema.org/height"/>
+    <rdfs:subPropertyOf rdf:resource="http://ogp.me/ns#image:height"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#width">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Image"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en">Image width in pixels</rdfs:label>
+    <rdfs:label xml:lang="es">Ancho de la imagen en unidades de pixel</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://schema.org/width"/>
+    <rdfs:subPropertyOf rdf:resource="http://ogp.me/ns#image:width"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#appearsIn">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Image"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en">Tha image appears in the Wikipedia Article</rdfs:label>
+    <rdfs:label xml:lang="es">La imagen aparece en el articulo de Wikipedia</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#associatedWith">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Image"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en">Tha image is related to the DBpedia resource</rdfs:label>
+    <rdfs:label xml:lang="es">La imagen se relaciona con el recurso de DBpedia</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://dbpedia.org/ontology/related"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#fileURL">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Image"/>
+    <rdfs:label xml:lang="en">The URL of the image in Wikimedia Commons</rdfs:label>
+    <rdfs:label xml:lang="es">La URL de la imagen en Wikimedia Commons</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://ogp.me/ns#image"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#describes">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Descriptor"/>
+    <rdfs:range rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Image"/>
+    <rdfs:label xml:lang="en">Describes an image</rdfs:label>
+    <rdfs:label xml:lang="es">Descriptor de una imagen</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#value">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Descriptor"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">Descriptor value</rdfs:label>
+    <rdfs:label xml:lang="es">Valor del descriptor</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#sourceImg">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#ImageRelation"/>
+    <rdfs:range rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Image"/>
+    <rdfs:label xml:lang="en">The source of an image relation</rdfs:label>
+    <rdfs:label xml:lang="es">El sujeto de la relacion entre imagenes</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#targetImg">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#ImageRelation"/>
+    <rdfs:range rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Image"/>
+    <rdfs:label xml:lang="en">The target of an image relation</rdfs:label>
+    <rdfs:label xml:lang="es">El objeto de la relacion entre imagenes</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#distance">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#ImageRelation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">The distance between the images in the relation</rdfs:label>
+    <rdfs:label xml:lang="es">La distancia entre las imagenes de la relacion</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="http://imgpedia.dcc.uchile.cl/ontology#usesDescriptor">
+    <rdfs:domain rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#ImageRelation"/>
+    <rdfs:range rdf:resource="http://imgpedia.dcc.uchile.cl/ontology#Descriptor"/>
+    <rdfs:label xml:lang="en">The descriptor used in the relation</rdfs:label>
+    <rdfs:label xml:lang="es">El descriptor usado en la relacion</rdfs:label>
+  </owl:ObjectProperty>
+
+</rdf:RDF>

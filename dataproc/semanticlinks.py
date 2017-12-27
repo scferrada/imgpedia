@@ -17,6 +17,7 @@ prefixes = "@prefix imo: <http://imgpedia.dcc.uchile.cl/ontology#>\n\n"
 
 imgpedia_pattern = "<http://imgpedia.dcc.uchile.cl/resource/%s>"
 dbpedia_pattern = "<http://dbpedia.org/resource/%s>"
+wikipedia_pattern = "<http://en.wikipedia.org/wiki/%s>"
 counter= 0
 
 with open(input_file, "r") as csv:
@@ -28,7 +29,8 @@ with open(input_file, "r") as csv:
 				continue
 			counter += 1
 			resource = parts[1].strip()[:-3]
-			txt = "%s imo:appearsIn %s .\n"
-			links.write(txt % ((imgpedia_pattern % parts[0]),(dbpedia_pattern % resource)))
+			txt = "%s imo:appearsIn %s ;\n" % ((imgpedia_pattern % parts[0]),(wikipedia_pattern % resource))
+			txt += "\timo:associatedWith %s .\n" % (dbpedia_pattern % resource)
+			links.write(txt)
 			if counter%100000 == 0:
 				print "%d images written" % counter
