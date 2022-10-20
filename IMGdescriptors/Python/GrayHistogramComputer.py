@@ -19,7 +19,7 @@ class GrayHistogramComputer(DescriptorComputer):
 		for row in range(self.rows):
 			for col in range(self.cols):
 				mask = np.zeros_like(frame)
-				mask[((frameH/self.rows)*row):((frameH/self.rows)*(row+1)),(frameW/self.cols)*col:((frameW/self.cols)*(col+1))] = 1
+				mask[int((frameH/self.rows)*row):int((frameH/self.rows)*(row+1)), int(frameW/self.cols)*col:int((frameW/self.cols)*(col+1))] = 1
 				hist = cv2.calcHist([frame], self.channel, mask, [self.bins], self.range)
 				hist = cv2.normalize(hist, None)
 				descriptor.append(hist)
